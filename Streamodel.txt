@@ -1,0 +1,67 @@
+package a1;
+
+import java.util.Arrays;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class StreamAPIModel {
+	
+	static List<Account> allAccounts; 
+	
+	public static void main(String[] args) {
+		
+		
+		Account a1 = new Account("Archana",201,1000,"Hyderabad");
+		Account a2 = new Account("Akshatha",202,2000,"Karimnagar");
+		Account a3 = new Account("Ramya",203,3000,"Manthani");
+		Account a4 = new Account("Jithendra",204,4000,"Hyderabad");
+		
+		  allAccounts = Arrays.asList(a1,a2,a3,a4);
+		  
+		  callForEach();
+		  callFilter();
+		  
+		  List<Account> list = callFilterWithCollectOperation();
+
+
+
+	}
+	
+	public static List<Account> callFilterWithCollectOperation()
+	{
+		List<Account> outputList = allAccounts.stream().filter((emp)->{
+			if(emp.getBalance()>15000) return true;
+			else return false;
+		}).collect(Collectors.toList());
+		
+		return outputList;
+	}
+	
+	
+	public static void callFilter()
+	{
+		allAccounts.stream().filter((emp)->{
+			if(emp.getBalance()>15000) return true;
+			else return false;
+		}).forEach((emp)->{
+			System.out.println(emp);
+		});
+		
+		
+	}
+
+	public static void callForEach()
+	{
+		allAccounts.stream().forEach((e)->{
+			System.out.println(e.getAccountHolderName());
+		});
+		
+	}
+
+
+}
+
+
+
+

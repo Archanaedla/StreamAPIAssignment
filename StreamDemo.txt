@@ -1,0 +1,80 @@
+package a1;
+import java.util.Arrays;
+
+import java.util.Collection;
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
+
+import a1.Account;
+
+
+public class StreamAPIDemo{
+	
+	static List<Account> allAccounts;
+	static Collection<Account> list;
+
+	public static void main(String[] args) {
+		
+		Account a1 = new Account("Archana",201,1000,"Hyderabad");
+		Account a2 = new Account("Akshatha",202,2000,"Karimnagar");
+		Account a3 = new Account("Ramya",203,3000,"Manthani");
+		Account a4 = new Account("Jithendra",204,4000,"Hyderabad");
+		
+		  allAccounts = Arrays.asList(a1,a2,a3,a4);
+		 
+//		  list.stream().forEach(e->System.out.println(e));
+		  
+		  System.out.println(getAccountOfMinBalance());
+		  System.out.println(getAccountOfMaxBalance());
+		  
+
+	}//end main
+	
+	public static Account getAccountOfMaxBalance() {
+		Comparator<Account> com1 = (a1,a2)->{
+			return (a1.getBalance() + a2.getBalance());
+		};
+		
+		Account a = 
+				allAccounts.stream().max(com1).get();
+		return a;
+	}
+
+	public static Account getAccountOfMinBalance()
+	{
+		
+		Comparator<Account> com = (a1,a2)->{
+			return (a1.getBalance() - a2.getBalance());
+		};
+		
+		Account a = 
+				allAccounts.stream().min(com).get();
+		return a;
+		
+	}
+	
+
+	
+//	public static List<Account> makeSomeChanges()
+//	{
+//		List<Account> outputList = 
+//			allAccounts.stream().
+//			filter((emp)->{
+//			if(emp.getBalance()>1500) return true;
+//			else return false;
+//		    }).
+//			map(emp->{
+//				double oldSalary = emp.getBalance();
+//				double newSalary = oldSalary*1.2;
+//				emp.setBalance(newSalary);
+//				return emp;
+//			}).collect(Collectors.toList());
+//		
+//		return outputList;
+//		
+//		
+//	}
+//	
+		
+}//end class

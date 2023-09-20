@@ -1,0 +1,95 @@
+package a1;
+
+
+import a1.Account;
+
+
+	public class Account {
+		private String accountHolderName;
+		private int accountNumber;
+		private int balance;
+		private String location;
+
+		public Account() {
+
+		}
+
+		
+
+		public Account(String accountHolderName, int accountNumber, int balance, String location) {
+			super();
+			this.accountHolderName = accountHolderName;
+			this.accountNumber = accountNumber;
+			this.balance = balance;
+			this.location = location;
+		}
+
+
+
+		public String getAccountHolderName() {
+			return accountHolderName;
+		}
+
+		public void setAccountHolderName(String accountHolderName) {
+			accountHolderName = accountHolderName;
+		}
+
+		public int getAccountNumber() {
+			return accountNumber;
+		}
+
+		public void setAccountNumber(int accountNumber) {
+			accountNumber = accountNumber;
+		}
+
+		public int getBalance() {
+			return balance;
+		}
+
+		public void setBalance(int balance) {
+			balance = balance;
+		}
+
+		public String getLocation() {
+			return location;
+		}
+
+		public void setLocation(String location) {
+			location = location;
+		}
+
+		@Override
+		public String toString() {
+			return "AccountHolderName [AccountHolderName=" + accountHolderName + ", AccountNumber=" + accountNumber
+					+ ", Balance=" + balance + ", Location=" + location + "]";
+
+		}
+
+		@Override
+		public int hashCode() {
+			return accountHolderName.length();
+
+		}
+		// ramesh
+		// suresh
+
+		@Override
+		public boolean equals(Object obj) {
+			if (obj instanceof Account) {
+			
+
+		}
+			return false;
+		}
+		
+	}
+			
+
+
+
+
+
+
+
+
+
