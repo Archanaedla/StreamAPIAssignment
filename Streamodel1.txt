@@ -1,0 +1,25 @@
+package level1;
+import  java.util.function.Consumer;
+
+
+public class StreamClass {
+	public static void main(String[] args) {
+		
+		Consumer<String> str = new Consumer<String>() {
+
+			@Override
+			public void accept(String t) {
+				String s = t+"month";
+				System.out.println(s);
+				
+			}
+			
+		};
+		String arr[]= {"jan","feb"};
+		for(String s : arr) {
+			str.accept(s);
+		};
+	}
+}
+	
+

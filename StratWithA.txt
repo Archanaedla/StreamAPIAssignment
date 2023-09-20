@@ -1,0 +1,56 @@
+package level1;
+
+import java.util.ArrayList;
+
+	import java.util.Comparator;
+
+	import java.util.List;
+
+	import java.util.function.Consumer;
+
+	import java.util.function.Predicate;
+
+	public class StartWithA {
+
+		public static void main(String[] args) {
+
+	System.out.println("\nStarts With 'A'\n");
+
+			String s = "A";
+
+			Predicate<String> pred = (str) -> {
+
+				if (str.startsWith(s)){
+
+					return true;
+
+				}
+
+				return false;
+
+			};
+
+
+
+			String arr1[] = {"Pavs","Archu","Sahithi"};
+
+			for (String t : arr1) {
+
+				if (pred.test(t)) {
+
+					System.out.println(t);
+
+				}
+
+			}
+
+
+
+
+
+		}
+
+	}
+
+
+
